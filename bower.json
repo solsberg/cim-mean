@@ -1,0 +1,25 @@
+{
+  "name": "CloudInstanceManager",
+  "version": "0.0.0",
+  "authors": [
+    "Simon Olsberg <simon@olsbergfamily.net>"
+  ],
+  "description": "A web application for managing EC2 instances",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.16",
+    "angular-resource": "~1.2.16",
+    "angular-route": "~1.2.16",
+    "bootstrap": "~3.1.1",
+    "jquery": "~2.1.0"
+  }
+}
