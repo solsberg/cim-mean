@@ -1,0 +1,52 @@
+.col-md-10.col-md-offset-1
+  .instances-title Your Cloud Machines
+
+  ul#instance-list
+    li.instance-list-item(ng-repeat='instance in instances')
+      .instance-heading(ng-class="instance.displayStatus().toLowerCase()")
+        span.instance-name {{instance.name}}
+        //- a.details-toggle(data-toggle="collapse" data-parent="#instance-list" href="#collapse-{{instance.id}}") Details
+      .instance-detail-container.collaps(id="collapse-{{instance._id}}")
+        .instance-detail(ng-class="instance.displayStatus().toLowerCase()")
+          .instance-detail-edit-controls
+            a.btn.btn-info.btn-xs(href="{{instance.url}}/edit") Settings 
+            &nbsp;
+            a.btn.btn-danger.btn-xs(href="{{instance.url}}/delete", ng-show="isAdmin") Remove
+          div
+            span.heading Current status
+            | : 
+            span.display-status {{instance.displayStatus()}}
+            button.btn.btn-default.btn-xs.start(ng-click="start(instance)", type="button", ng-show="instance.isStopped()") Start
+            button.btn.btn-default.btn-xs.stop(ng-click="stop(instance)", type="button", ng-show="instance.isRunning()") Stop
+
+          div
+            span.heading Server address
+            | : 
+            span.server-name {{instance.server}}
+            //- <a class="connect" href="@Url.Action("Connection")/<%= Id %>">Connect</a>
+
+            a.credentials-link(data-toggle="modal" href="#credentials-panel") Display login credentials
+
+          div
+            span.heading Current session uptime
+            | : 
+            span.session-time
+          div
+            span.heading Total hours this month
+            | : 
+            a(href="{{instance.url}}/usage")
+              span.month-time {{instance.currentMonthHours()}} 
+              | hours
+
+  div
+    a.btn.btn-default(href="/instances/new?userName={{userName}}") Assign Instance
+
+
+//-                 <div class="instance-detail-edit-controls">
+//-                     <a class="btn btn-info btn-mini" href="@Url.Action("Edit")/<%= Id %>">Settings</a>
+//- @if (ViewBag.Admin)
+//- {
+//-                     <a class="btn btn-danger btn-mini" href="@Url.Action("Delete")/<%= Id %>">Remove</a>
+//- }
+
+

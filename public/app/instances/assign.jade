@@ -1,0 +1,19 @@
+h2 Assign New Instance to {{userName}}
+
+.validation-summary-errors
+  span {{validation_summary_errors}}
+
+form.col-md-8(name='assignInstanceForm')
+  fieldset
+    .form-group
+      input.form-control(name='name', type='text', placeholder='Enter Instance Id...', ng-model='name', required)
+    .form-group
+      input.form-control(name='loginName', type='text', placeholder='Enter Windows User Name...', ng-model='loginName', required)
+    .form-group
+      input.form-control(name='loginPassword', type='text', placeholder='Enter Windows Password...', ng-model='loginPassword', required)
+    .form-group
+      .pull-right
+        button.btn.btn-primary(ng-click="assignInstance()", ng-disabled="assignInstanceForm.$invalid") Assign
+        | &nbsp; 
+        a.btn.btn-default(href='/instances{{cancelQueryString}}') Cancel
+  br

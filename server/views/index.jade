@@ -1,6 +1,22 @@
 extends ../includes/layout.jade
 
 block main-content
-  section.content
-    div(ng-view)
-  h2= mongoMessage
+  .navbar.navbar-fixed-top.TransCAD_Banner(ng-controller='navbarCtrl')
+    .container
+      .navbar-header
+        //- a.navbar-brand(href='/') TransCAD
+      .navbar-collapse.collapse
+        ul.nav.navbar-nav.pull-right
+          li
+            a(href='/') Home
+          li(ng-hide="identity.isAuthenticated()")
+            a(href='/login') Sign In
+          li(ng-show="identity.isAuthenticated()")
+            a(href='', ng-click="signout()") Sign Out
+          li(ng-show="identity.isAdmin()")
+            a(href='/admin/users') User Administration
+        //- div(ng-include="'/partials/account/navbar-login'")
+
+  .container
+    section.content
+      div(ng-view)

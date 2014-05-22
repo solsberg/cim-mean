@@ -1,0 +1,116 @@
+body {
+  padding-top: 78px;
+}
+.TransCAD_Banner {
+  background-image: url("img/TC%20Cloud%20Banner.png");
+  background-repeat: no-repeat;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  text-align: right;
+  height: 75px;
+  padding-right: 0.2in;
+  border-bottom: 2px #588ad3 solid;
+}
+.validation-summary-errors {
+  font-weight: bold;
+  color: #f00;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.users-list li {
+  list-style-type: none;
+}
+.user-list-item-instances {
+  float: right;
+}
+.user-list-item-email {
+  display: block;
+  font-size: smaller;
+}
+.instances-title {
+  margin-top: 5px;
+  background-color: #5c92dc;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #f0f0f0;
+}
+.instance-list-item {
+  list-style-type: none;
+  margin: 2px;
+}
+.instance-name {
+  padding-left: 35px;
+}
+.instance-heading.stopped {
+  background-image: url("img/stopped.png");
+  background-position: 2px 2px;
+  background-repeat: no-repeat;
+  background-color: #edd0be;
+}
+.instance-heading.starting,
+.instance-heading.stopping {
+  background-image: url("img/starting.gif");
+  background-position: 1px 1px;
+  background-repeat: no-repeat;
+  background-color: #eae6d2;
+}
+.instance-heading.running {
+  background-image: url("img/running.png");
+  background-position: 2px 2px;
+  background-repeat: no-repeat;
+  background-color: #beb;
+}
+.instance-detail.stopped {
+  background-color: #ffe0e0;
+}
+.instance-detail.starting,
+.instance-detail.stopping {
+  background-color: #f6f6e8;
+}
+.instance-detail.running {
+  background-color: #e0ffe0;
+}
+.instance-heading {
+  padding: 10px;
+  font-size: 120%;
+  font-weight: bold;
+}
+.instance-heading .details-toggle {
+  float: right;
+}
+.instance-detail-container {
+  margin: 2px;
+}
+.instance-detail {
+  padding: 5px 12px;
+  font-size: 10pt;
+  line-height: 160%;
+}
+.instance-detail .heading {
+  font-weight: bold;
+}
+.instance-detail .start,
+.instance-detail .stop {
+  margin-left: 20px;
+}
+.instance-detail img.loading {
+  vertical-align: text-top;
+}
+#instance-list {
+  padding-top: 5px;
+  padding-bottom: 20px;
+  padding-left: 0px;
+}
+#instances-summary {
+  padding-top: 10px;
+}
+.connect {
+  margin-left: 20px;
+}
+.credentials-link {
+  margin-left: 40px;
+}
+.instance-detail-edit-controls {
+  float: right;
+}

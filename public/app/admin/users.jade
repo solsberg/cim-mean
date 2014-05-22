@@ -1,0 +1,46 @@
+h3 User Administration
+br
+h4 Users 
+  a(href='/admin/users/new') (New User)
+.all-users
+  ul.users-list
+    li.well.col-md-offset-1.col-md-10(ng-repeat="user in users")
+      span
+        a(href='/admin/users/{{user._id}}') {{user.userName}}
+      span.user-list-item-instances
+        a(href='/instances?targetUserName={{user.userName}}') Instances
+      span.user-list-item-email
+        a(href='mailto:{{user.email}}') {{user.email}}
+
+      //- <span class="mvcMembership-username">@Html.ActionLink(user.UserName, "Details", new{ id = user.ProviderUserKey})</span>
+      //-       <span class="mvcMembership-instances">@Html.ActionLink("Instances", "Index", "Instance", new { area = "", targetUserName = user.UserName }, new { })</span>
+      //- <span class="mvcMembership-email"><a href="mailto:@user.Email">@user.Email</a></span>
+      //- @if(user.IsOnline){
+      //-   <span class="mvcMembership-isOnline">Online</span>
+      //- }else{
+      //-   <span class="mvcMembership-isOffline">Offline for
+      //-     @{
+      //-       var offlineSince = (DateTime.Now - user.LastActivityDate);
+      //-       if (offlineSince.TotalSeconds <= 60){
+      //-         <text>1 minute.</text>
+      //-       }else if(offlineSince.TotalMinutes < 60){
+      //-         <text>@Math.Floor(offlineSince.TotalMinutes) minutes.</text>
+      //-       }else if (offlineSince.TotalMinutes < 120){
+      //-         <text>1 hour</text>
+      //-       }else if (offlineSince.TotalHours < 24){
+      //-         <text>@Math.Floor(offlineSince.TotalHours) hours.</text>
+      //-       }else if (offlineSince.TotalHours < 48){
+      //-         <text>1 day.</text>
+      //-       }else{
+      //-         <text>@Math.Floor(offlineSince.TotalDays) days.</text>
+      //-       }
+      //-     }
+      //-   </span>
+      //- }
+      //- @if(!string.IsNullOrEmpty(user.Comment)){
+      //-   <span class="mvcMembership-comment">@user.Comment</span>
+      //- }
+
+  //- @Html.PagedListPager(Model.Users, page => Url.Action("Index", new { page, search = Model.Search }))
+
+  p(ng-show="users.length == 0") No users have registered.
